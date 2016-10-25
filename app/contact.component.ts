@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 @Component({
   selector: 'root-container',
-  template: `<router-outlet></router-outlet>`
-  
+  templateUrl: 'views/home.html'
 })
-export class AppComponent { }
+export class ContactComponent { }
