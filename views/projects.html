@@ -1,107 +1,60 @@
-<div >
+<div *ngFor="let project of profile.projects">
 
-<TABLE cellspacing=0 cellpadding=1 width=100%>
-	<TR>
-		<TH class='resumeTemplate' style='font-size: 10pt;  font-weight: bold; background-color: #eee;' align='Left' runat='server'>
-			&nbsp;&nbsp;<B>Client/Company&nbsp;:</B> 
-			Accenture - Internal
-			<BR>
-			&nbsp;&nbsp;<B>Project&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</B> 
-			Issue Tracker - Scala and Play framework
-			<BR>
-			&nbsp;&nbsp;<B>Project Duration&nbsp;:</B> 
-			January
-			&nbsp;2016&nbsp;-&nbsp;February&nbsp;2016&nbsp;&nbsp;                                    <BR>
-			&nbsp;&nbsp;<B>Assigned Role&nbsp;&nbsp;&nbsp;&nbsp;:</B>
-			Software Developer                      
-		</TH>
-	</TR>
-	<TR>
-		<TD style='font-size: 10pt;' align='left' colspan='3'>
-			<B>Project & Assignment Description</B>
-		</TD>
-	</TR>
-	<TR>
-		<TD style='font-size: 10pt;' colspan='3'>
-			Issue Tracker application is a 'proof of concept' application to demonstrate Play framework and Scala integration capabilities. Application provided simple to use interface for adding new issues to the database and listing the existing issues on screen for analysis.<BR /><BR />Technology used: Play Framework and Scala (functional programming)
-		</TD>
-	</TR>
-</TABLE>
-<BR>
-<TABLE cellspacing=0 cellpadding=1 width=100%>
-	<TR>
-		<TH class='resumeTemplate' style='font-size: 10pt;  font-weight: bold; background-color: #eee;' align='Left' runat='server'>
-			&nbsp;&nbsp;<B>Client/Company&nbsp;:</B> 
-			European Union
-			<BR>
-			&nbsp;&nbsp;<B>Project&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</B> 
-			TAXUD
-			<BR>
-			&nbsp;&nbsp;<B>Project Duration&nbsp;:</B> 
-			November
-			&nbsp;2012&nbsp;-&nbsp;April&nbsp;2014&nbsp;&nbsp;                                    <BR>
-			&nbsp;&nbsp;<B>Assigned Role&nbsp;&nbsp;&nbsp;&nbsp;:</B>
-			&nbsp;&nbsp; Lead Developer              
-		</TH>
-	</TR>
-	<TR>
-		<TD style='font-size: 10pt;' align='left' colspan='3'>
-			<B>Project & Assignment Description</B>
-		</TD>
-	</TR>
-	<TR>
-		<TD style='font-size: 10pt;' colspan='3'>
-			Role: Lead Developer – Development and delivery for Data Dissemination System<BR /><BR />Responsibilities: <BR />1. Understand Business, System & Security requirements and apply design patterns to create Solution Design Document.<BR />2. Develop proof-of-concepts and UI wireframes<BR />3. Develop and unit test the assigned user stories<BR />4. Design and Build the development framework to facilitate implementation of user stories<BR />5. Help the team in getting up to speed with the frameworks and ensure all user stories are implemented<BR />6. Scrum Agile - Plan and Execute sprints. Present outcome to client, Record feedback and implementation of feedback in subsequent sprint<BR />
-		</TD>
-	</TR>
-	<TR>
-		<TD style='font-size: 10pt;' align='left' colspan='3'>
-			<BR><B>Supervisor</B>
-		</TD>
-	</TR>
-	<TR>
-		<TD style='font-size: 10pt;' colspan='3'>
-			Prashant Choudhari
-		</TD>
-	</TR>
-</TABLE>
-<BR>
-<TABLE cellspacing=0 cellpadding=1 width=100%>
-	<TR>
-		<TH class='resumeTemplate' style='font-size: 10pt;  font-weight: bold; background-color: #eee;' align='Left' runat='server'>
-			&nbsp;&nbsp;<B>Client/Company&nbsp;:</B> 
-			European Parliament
-			<BR>
-			&nbsp;&nbsp;<B>Project&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</B> 
-			Safe Mission Data
-			<BR>
-			&nbsp;&nbsp;<B>Project Duration&nbsp;:</B> 
-			April
-			&nbsp;2012&nbsp;-&nbsp;October&nbsp;2012&nbsp;&nbsp;                                    <BR>
-			&nbsp;&nbsp;<B>Assigned Role&nbsp;&nbsp;&nbsp;&nbsp;:</B>
-			SW Business Technology Lead             
-		</TH>
-	</TR>
-	<TR>
-		<TD style='font-size: 10pt;' align='left' colspan='3'>
-			<B>Project & Assignment Description</B>
-		</TD>
-	</TR>
-	<TR>
-		<TD style='font-size: 10pt;' colspan='3'>
-			Role: Lead Developer – Development and delivery for Data Dissemination System<BR /><BR />Responsibilities: <BR /><BR />1. Develop proof-of-concepts and UI wireframes<BR />2. Design and Build the development framework to facilitate implementation of user stories<BR />3. Development and unit testing of modules<BR />4. Help the team in getting up to speed with the frameworks and ensure all user stories are implemented<BR />5. Jenkins integration and SVN setup for the project<BR />6. Deployment and environment setup support for UAT and Performance test environments<BR />
-		</TD>
-	</TR>
-	<TR>
-		<TD style='font-size: 10pt;' align='left' colspan='3'>
-			<BR><B>Supervisor</B>
-		</TD>
-	</TR>
-	<TR>
-		<TD style='font-size: 10pt;' colspan='3'>
-			Prashant Choudhari
-		</TD>
-	</TR>
-</TABLE>
+	
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<table class='table table-condensed'>
+				<tr> <td> Client/Company </td> <td>{{project.client}} / {{project.company}}</td> </tr>
+				<tr> <td> Project </td> <td>{{project.name}} </td> </tr>
+				<tr> <td> Project Duration </td> <td> {{project.startDate}}    -  {{project.endDate}}    </td> </tr>
+				<tr> <td> Assigned Role </td> <td> {{project.role}}     </td> </tr>
+			</table>
+		</div>
+		<div class="panel-body">
+			<TABLE class='table table-condensed'>
+	
+		
+				<tbody>
+				<TR>
+					<TD style='font-size: 10pt;' align='left' colspan='3'>
+						<B>Project Description</B>
+					</TD>
+				</TR>
+				<TR>
+					<TD style='font-size: 10pt;' colspan='3'>
+						 {{project.description}}     
+					</TD>
+				</TR>
+				
+				<TR>
+					<TD style='font-size: 10pt;' align='left' colspan='3'>
+						<B>Responsibilities</B>
+					</TD>
+				</TR>
+				<TR>
+					<TD style='font-size: 10pt;' colspan='3'>
+						 {{project.responsibilities}}     
+					</TD>
+				</TR>
+				
+				<TR>
+					<TD style='font-size: 10pt;' align='left' colspan='3'>
+						<B>Major Achievements</B>
+					</TD>
+				</TR>
+				<TR>
+					<TD style='font-size: 10pt;' colspan='3'>
+						 {{project.achievements}}     
+					</TD>
+				</TR>
+				</tbody>
+				
+			</TABLE>
+		</div>
+</div>
+
+
+
+ <BR>
 	
 </div>

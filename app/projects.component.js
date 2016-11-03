@@ -9,15 +9,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var profile_service_1 = require('./services/profile.service');
+var profile_1 = require('./model/profile');
 var ProjectsComponent = (function () {
-    function ProjectsComponent() {
+    //create a new profile object 
+    function ProjectsComponent(profileService) {
+        this.profileService = profileService;
+        this.profile = new profile_1.Profile();
     }
+    //initiate profile object with summary info
+    ProjectsComponent.prototype.ngOnInit = function () {
+        this.profile.projects = this.profileService.getProjects();
+    };
     ProjectsComponent = __decorate([
         core_1.Component({
             selector: 'root-container',
-            templateUrl: 'views/projects.html'
+            templateUrl: 'views/projects.html',
+            providers: [profile_service_1.ProfileService]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [profile_service_1.ProfileService])
     ], ProjectsComponent);
     return ProjectsComponent;
 }());
