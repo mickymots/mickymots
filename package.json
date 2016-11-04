@@ -1,7 +1,7 @@
 {
   "name": "AmitsWebsite",
   "version": "1.0.0",
-  "description": "ESO Login Application POC",
+  "description": "Website Application",
   "main": "server.js",
   
  "scripts": {
