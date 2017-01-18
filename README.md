@@ -1,2 +1,0 @@
-# mickymots
-public website
